@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+        .card-header {
+    
+          font-size: x-large;
+          font-weight: 500;
+    
+        }
+    
+    
+    
+        .card {
+          height: 70vh;
+          /* Adjust height as needed (e.g., 70% of the viewport) */
+          overflow: hidden;
+          /* Prevent scrolling inside the card */
+          position: relative;
+          /* Ensure proper positioning of overlay */
+        }
+    
+        .card-img {
+          object-fit: cover;
+          /* Ensure the image scales correctly */
+          height: 100%;
+          /* Match the height of the card */
+          width: 100%;
+          /* Cover the entire width of the card */
+        }
+    
+        .card-img-overlay {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          height: 100%;
+          /* Ensure the overlay covers the card */
+          background: rgba(0, 0, 0, 0.5);
+          /* Optional: Add a semi-transparent background */
+        }
+      </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
+        <a class="navbar-brand " href="#">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC+ElEQVR4nO3YT0hUQRzA8Z/zVmfWAgk6FElZUYegY9IfiiKCDh3qEBJB0KU85M6sdH/szFqKp6BL1Ck7RRRC0UUUIXZmzVJM25kFCwJBqehYVPjiuamlB9P33s575BcGlsdjdz8M82Z4ADbqHt1AuLlEuH6KuZ7GQp+GpIVz5VNYmCkijDc/0m65EZIUzumThJvvfyKI0KOQqNz3BHP94W+E8eryJgNJigjdshSBuR4Bd7wOkhTm+tESxKt03myDpEW4efcbUMS5UivcGa6FJEZy+shGV2+2/T/+37DQO4nQ7YSb23ND6HbslpogMXleDea6Y/l+YTz/GhaG+/dA3MPcdC0DLH3sCn0D4hwRpcOE69mVIP496bxphrhGuHm+ImLxaPIM4lh9/u1WwvXPf4eYH/Xu+BaIW2mus6tAVE69ec0gbmGuR1YLwUK/hjiVzpvm1SIWZiWnD0CM9o3BtUIINwMQh4gw19eMmJ8VrrNWEThXOuE/fYJC/O/AonTcCoKIiR1Y6JkQEJWFz/U0cSe3V1fROdlAhBkLC7G4XvREw82xTdVBuON1RJi+0BGLMzMIt8o4cgfm5kFUCLKAMfcjRfg7cdQIEvXblbqO8j4i9NdqQQjX32p5aX/IDK8GMdnvZNWXag7EZL//26ExnGzxnMOUZ2VQdTY0CKKy3xYEMdkXjqJNNTpMzlqbESZnIVsI/iIPUXXBHkJVZoXKlsAQh6qbtiEOk8FfVjhM3rMOoepuCBDVYx3CVE9wCJXd1iFUdgWGICoztiEoo64FhkBG7rENgfbi3uCQyoKfsDYbTL6BsEKscDHRe8hCrocQlS+rPxtKhXponIvKJoeqmapBqPwIbGgXRFGKFg85VH2OHiI/pbLqIERa24vdiKqxCNfEaGQzsawrw7WIFVsdpqZCREwhqq6CO5CCqnf+oZOixWMOU52IySeIyQJicggx1evvxigrLzuZ4hl/zH32rzHVW7lHFhCVj/1DaYqpo/53wXrrrQdR9QtuMTe8A6qF3QAAAABJRU5ErkJggg==" width="30" height="30" class="d-inline-block align-top" alt="">
+            CourseCatalyst
+          </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="r.html">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+
+
+
+
+      
+  <div class="card text-center">
+   
+    <!-- <div class="card-header">
+      Welcome, User
+    </div> -->
+
+    <div class="card bg-dark text-white">
+      <img src="header.jpg" class="card-img" alt="...">
+      <div class="card-img-overlay">
+        <h5 class="card-title" style="font-size: 1.8rem;">Welcome, User</h5>
+        <p class="card-text">Manage your account, track transactions, and explore services.</p>
+        <p class="card-text">Last updated just now</p>
+      </div>
+    </div>
+
+
+
+
+    <div class="card-body">
+      <h5 class="card-title">Our Latest Courses</h5>
+      <button type="button" class="btn btn-outline-dark">Click Here</button>
+    </div>
+  </div>
+
+
+  <div class="card bg-dark text-white" style="height: 300px; overflow: hidden;">
+    <img src="/images/main3.jpg" class="card-img" alt="..." style="object-fit: cover; height: 100%;">
+    <div class="card-img-overlay d-flex flex-column justify-content-center text-center">
+      <h5 class="card-title mb-2" style="font-size: xx-large;">Technical Courses</h5>
+      <p class="card-text" style="font-size: 0.9rem;">
+        Discover a range of technical courses designed to equip you with cutting-edge skills in programming, web development, 
+        data science, AI, cloud computing, cybersecurity, and more. Our courses combine theory with hands-on projects to ensure practical 
+        knowledge and career readiness, guided by industry experts.
+      </p>
+    </div>
+  </div>
+  
+
+
+
+
+  <!-- <div class="card mb-3" style="max-width: 540px; height: 200px;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="/images/java.jpeg" class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <br><br>
+  <div class="card-group">
+    <div class="card" style="max-width: 250px; margin: auto; height: 250px;">
+      <img src="/images/python.jpeg" class="card-img-top" alt="..." style="height: 100px; object-fit: cover;">
+      <div class="card-body" style="padding: 10px;">
+        <h5 class="card-title" style="font-size: 0.9rem; margin-bottom: 5px;">Python</h5>
+        <p class="card-text" style="font-size: 0.8rem; margin-bottom: 5px;">Python is a high-level, interpreted programming language known for its simplicity and readability. It was created by Guido van Rossum and first released in 1991. Python's design philosophy emphasizes code readability and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java.</p>
+   
+      </div>
+    </div>
+    <div class="card" style="max-width: 250px; margin: auto; height: 250px;">
+      <img src="/images/javaa.jpeg" class="card-img-top" alt="..." style="height: 100px; object-fit: cover;">
+      <div class="card-body" style="padding: 10px;">
+        <h5 class="card-title" style="font-size: 0.9rem; margin-bottom: 5px;">java</h5>
+        <p class="card-text" style="font-size: 0.8rem; margin-bottom: 5px;">This card has supporting text below as a natural lead-in to additional content.</p>
+       
+      </div>
+    </div>
+    <div class="card" style="max-width: 250px; margin: auto; height: 250px;">
+      <img src="/images/c.jpeg" class="card-img-top" alt="..." style="height: 100px; object-fit: cover;">
+      <div class="card-body" style="padding: 10px;">
+        <h5 class="card-title" style="font-size: 0.9rem; margin-bottom: 5px;">C++</h5>
+        <p class="card-text" style="font-size: 0.8rem; margin-bottom: 5px;">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        
+      </div>
+    </div>
+  </div>
+  
+
+
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+    </ul>
+    <p class="text-center text-body-secondary">© 2024 CourseCatalyst, Inc</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
